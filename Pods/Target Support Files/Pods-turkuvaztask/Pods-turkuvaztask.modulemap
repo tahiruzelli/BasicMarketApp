@@ -1,0 +1,6 @@
+framework module Pods_turkuvaztask {
+  umbrella header "Pods-turkuvaztask-umbrella.h"
+
+  export *
+  module * { export * }
+}
