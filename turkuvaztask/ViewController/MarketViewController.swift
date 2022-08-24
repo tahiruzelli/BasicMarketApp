@@ -8,22 +8,42 @@
 import UIKit
 
 class MarketViewController: BaseViewController {
-
+    
+    @IBOutlet weak var itemCollectionView: UICollectionView!
+    lazy var viewModel: MarketViewModel = {
+          return MarketViewModel()
+      }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initVM()
+        
+        itemCollectionView.dataSource = self
+        itemCollectionView.delegate = self
+    
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func initVM(){
+        viewModel.reloadTableViewClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                self!.itemCollectionView.reloadData()
+                
+            }
+        }
+        viewModel.getProductList()
     }
-    */
+}
 
+extension MarketViewController : UICollectionViewDataSource, UICollectionViewDelegate{
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.itemList?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MarketCollectionViewCell", for: indexPath) as! MarketCollectionViewCell
+        cell.set(item: self.viewModel.itemList![indexPath.row])
+        return cell
+    }
 }

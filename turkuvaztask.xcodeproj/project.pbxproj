@@ -18,6 +18,8 @@
 		1E097EED28B53E5300ED3DDF /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E097EEC28B53E5300ED3DDF /* BasketViewController.swift */; };
 		1E097EEF28B53E8A00ED3DDF /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E097EEE28B53E8A00ED3DDF /* BasketViewModel.swift */; };
 		1E097EF128B53E9500ED3DDF /* MarketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E097EF028B53E9500ED3DDF /* MarketViewModel.swift */; };
+		1E097EF528B5411F00ED3DDF /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E097EF428B5411F00ED3DDF /* Urls.swift */; };
+		1EBA5C4C28B62BD400972428 /* MarketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBA5C4B28B62BD400972428 /* MarketCollectionViewCell.swift */; };
 		59AFB15ABECE8FB6A58D85B2 /* Pods_turkuvaztask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F9EDFC615147CD436E4C19 /* Pods_turkuvaztask.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		1E097EEC28B53E5300ED3DDF /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		1E097EEE28B53E8A00ED3DDF /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
 		1E097EF028B53E9500ED3DDF /* MarketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewModel.swift; sourceTree = "<group>"; };
+		1E097EF428B5411F00ED3DDF /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		1EBA5C4B28B62BD400972428 /* MarketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCollectionViewCell.swift; sourceTree = "<group>"; };
 		26F9EDFC615147CD436E4C19 /* Pods_turkuvaztask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_turkuvaztask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BBA167EAB17F55A7523B23 /* Pods-turkuvaztask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-turkuvaztask.debug.xcconfig"; path = "Target Support Files/Pods-turkuvaztask/Pods-turkuvaztask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +77,8 @@
 		1E097EC728B53BDB00ED3DDF /* turkuvaztask */ = {
 			isa = PBXGroup;
 			children = (
+				1EBA5C4A28B62BA900972428 /* View */,
+				1E097EF228B540F300ED3DDF /* Globals */,
 				1E097EDE28B53D4C00ED3DDF /* ViewController */,
 				1E097EDD28B53D4500ED3DDF /* ViewModel */,
 				1E097EDC28B53D3E00ED3DDF /* Model */,
@@ -113,13 +119,36 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		1E097EF228B540F300ED3DDF /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				1E097EF328B540F900ED3DDF /* Constans */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+		1E097EF328B540F900ED3DDF /* Constans */ = {
+			isa = PBXGroup;
+			children = (
+				1E097EF428B5411F00ED3DDF /* Urls.swift */,
+			);
+			path = Constans;
+			sourceTree = "<group>";
+		};
+		1EBA5C4A28B62BA900972428 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1EBA5C4B28B62BD400972428 /* MarketCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		61E8DF1BFB0DF5F400C07179 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				A9BBA167EAB17F55A7523B23 /* Pods-turkuvaztask.debug.xcconfig */,
 				01D4D83D086942C30DA06774 /* Pods-turkuvaztask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -246,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E097EF528B5411F00ED3DDF /* Urls.swift in Sources */,
 				1E097EE928B53E3400ED3DDF /* BaseViewController.swift in Sources */,
 				1E097EF128B53E9500ED3DDF /* MarketViewModel.swift in Sources */,
 				1E097EED28B53E5300ED3DDF /* BasketViewController.swift in Sources */,
@@ -253,6 +283,7 @@
 				1E097EC928B53BDB00ED3DDF /* AppDelegate.swift in Sources */,
 				1E097EEB28B53E4A00ED3DDF /* MarketViewController.swift in Sources */,
 				1E097EEF28B53E8A00ED3DDF /* BasketViewModel.swift in Sources */,
+				1EBA5C4C28B62BD400972428 /* MarketCollectionViewCell.swift in Sources */,
 				1E097ECB28B53BDB00ED3DDF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
