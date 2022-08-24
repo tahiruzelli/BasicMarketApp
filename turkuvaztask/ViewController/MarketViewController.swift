@@ -32,6 +32,9 @@ class MarketViewController: BaseViewController {
         }
         viewModel.getProductList()
     }
+    @IBAction func toBasketButtonAction(_ sender: Any) {
+        print("to basket action")
+    }
 }
 
 extension MarketViewController : UICollectionViewDataSource, UICollectionViewDelegate{
