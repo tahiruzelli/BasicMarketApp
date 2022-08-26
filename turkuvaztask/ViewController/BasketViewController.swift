@@ -47,9 +47,14 @@ class BasketViewController: BaseViewController {
         return total
     }
     
+    @IBAction func addButtonAction(_ sender: Any) {
+        print("Test 1")
+    }
     @IBAction func approveBasketAction(_ sender: Any){
         viewModel.approveBasket()
     }
+    
+    
 }
 
 extension BasketViewController : UITableViewDelegate, UITableViewDataSource{
@@ -60,6 +65,7 @@ extension BasketViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasketTableViewCell", for: indexPath) as! BasketTableViewCell
         cell.set(item: groupedItems[groupedItemIds[indexPath.row]] ?? [])
+        cell.item = groupedItems[groupedItemIds[indexPath.row]]?.first
         return cell
     }
 }

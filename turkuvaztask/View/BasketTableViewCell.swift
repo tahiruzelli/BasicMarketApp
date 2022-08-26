@@ -16,6 +16,8 @@ class BasketTableViewCell: UITableViewCell {
     
     @IBOutlet weak var selectedCountButton: UIButton!
     
+    var item : Item?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,8 +35,11 @@ class BasketTableViewCell: UITableViewCell {
     }
     
     @IBAction func removeButtonAction(_ sender: Any) {
+        let index = itemInBasket.firstIndex {$0.id == item!.id}
+        itemInBasket.remove(at: index ?? 0)
     }
     
     @IBAction func addButtonAction(_ sender: Any) {
+        itemInBasket.append(item!)
     }
 }
