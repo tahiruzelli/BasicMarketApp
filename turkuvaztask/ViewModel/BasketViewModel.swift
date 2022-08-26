@@ -10,15 +10,14 @@ import Alamofire
 
 class BasketViewModel {
 
-//    func approveBasket(){
-//        let request = AF.request(orderBasketUrl)
-//        request.responseJSON { (data) in
-//            request.responseDecodable(of: Product.self) { [self] (response) in
-//              guard let product = response.value else { return }
-//                self.itemList = product.data
-//                reloadTableViewClosure!()
-//            }
-//        }
-//    }
+    func approveBasket(){
+        let request = AF.request(orderBasketUrl)
+        request.responseJSON { (data) in
+            request.responseDecodable(of: OrderResponse.self) { (response) in
+              guard let orderResponse = response.value else { return }
+                print(orderResponse.data.status)
+            }
+        }
+    }
     
 }

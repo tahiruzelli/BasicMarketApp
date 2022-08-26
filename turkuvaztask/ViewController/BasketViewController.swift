@@ -14,6 +14,10 @@ class BasketViewController: BaseViewController {
     var groupedItems : [String : [Item]] = [:]
     var groupedItemIds : [String] = []
     
+    lazy var viewModel: BasketViewModel = {
+          return BasketViewModel()
+      }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         groupItems()
@@ -43,8 +47,8 @@ class BasketViewController: BaseViewController {
         return total
     }
     
-    @IBAction func approveBasketAction(_ sender: Any) {
-        groupItems()
+    @IBAction func approveBasketAction(_ sender: Any){
+        viewModel.approveBasket()
     }
 }
 
