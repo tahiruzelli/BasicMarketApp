@@ -52,6 +52,7 @@
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" title="+"/>
                                                             <connections>
+                                                                <action selector="addButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EX8-jM-p1Q"/>
                                                                 <action selector="addButtonAction:" destination="oMP-A2-pV0" eventType="touchUpInside" id="ng0-Jb-UtE"/>
                                                             </connections>
                                                         </button>
@@ -96,6 +97,7 @@
                                                             <buttonConfiguration key="configuration" style="plain" title="-"/>
                                                             <connections>
                                                                 <action selector="removeButtonAction:" destination="oMP-A2-pV0" eventType="touchUpInside" id="Kd9-Ik-xun"/>
+                                                                <action selector="removeButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ogx-hr-dth"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -218,6 +220,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="itemCollectionView" destination="Yle-o2-QyL" id="Bc2-s1-fx2"/>
+                        <outlet property="itemInBasketCountLabel" destination="lHy-0t-v97" id="kSs-XH-SYn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

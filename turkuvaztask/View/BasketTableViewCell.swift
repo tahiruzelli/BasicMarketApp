@@ -25,7 +25,12 @@ class BasketTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func set(item : Item){}
+    func set(item : [Item]){
+        titleLabel.text = item.first!.name
+        priceLabel.text = item.first!.currency + String(item.first!.price)
+        productImage.kf.setImage(with: URL(string: item.first!.imageURL))
+        selectedCountButton.setTitle(String(item.count), for: .normal)
+    }
     
     @IBAction func removeButtonAction(_ sender: Any) {
     }

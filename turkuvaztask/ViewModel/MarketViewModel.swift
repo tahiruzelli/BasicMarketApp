@@ -8,11 +8,21 @@
 import Foundation
 import Alamofire
 
+var itemInBasket : [Item] = []
 
 class MarketViewModel{
     var itemList : [Item]?
-    
+        
     var reloadTableViewClosure: (()->())?
+    
+    func addItemToBasket(item : Item){
+        itemInBasket.append(item)
+    }
+    
+    func removeItemFromBasket(item : Item){
+        let index = itemInBasket.firstIndex {$0.id == item.id}
+        itemInBasket.remove(at: index ?? 0)
+    }
     
     func getProductList(){
         let request = AF.request(getProductListUrl)
@@ -24,6 +34,8 @@ class MarketViewModel{
             }
         }
     }
+    
+    
     
     
     

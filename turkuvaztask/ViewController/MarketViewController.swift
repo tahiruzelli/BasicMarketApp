@@ -9,6 +9,7 @@ import UIKit
 
 class MarketViewController: BaseViewController {
     
+    @IBOutlet weak var itemInBasketCountLabel: UILabel!
     @IBOutlet weak var itemCollectionView: UICollectionView!
     lazy var viewModel: MarketViewModel = {
           return MarketViewModel()
@@ -31,6 +32,12 @@ class MarketViewController: BaseViewController {
             }
         }
         viewModel.getProductList()
+    }
+    @IBAction func addButtonAction(_ sender: Any) {
+        itemInBasketCountLabel.text = String(itemInBasket.count)
+    }
+    @IBAction func removeButtonAction(_ sender: Any) {
+        itemInBasketCountLabel.text = String(itemInBasket.count)
     }
     @IBAction func toBasketButtonAction(_ sender: Any) {
         print("to basket action")

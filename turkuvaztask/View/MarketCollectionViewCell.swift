@@ -34,12 +34,13 @@ class MarketCollectionViewCell: UICollectionViewCell {
         if item!.stock > selectedCount {
             selectedCount += 1
             selectedCountButton.setTitle(String(selectedCount), for: .normal)
+            itemInBasket.append(item!)
         }else{
             print("no stock")
         }
-        
         removeButton.isHidden = false
         selectedCountButton.isHidden = false
+        
     }
     @IBAction func removeButtonAction(_ sender: Any) {
         print("remove tapped")
@@ -48,11 +49,15 @@ class MarketCollectionViewCell: UICollectionViewCell {
         }else{
             selectedCount -= 1
             selectedCountButton.setTitle(String(selectedCount), for: .normal)
+            let index = itemInBasket.firstIndex {$0.id == item!.id}
+            itemInBasket.remove(at: index ?? 0)
             if selectedCount == 0{
                 removeButton.isHidden = true
                 selectedCountButton.isHidden = true
             }
         }
+        
+        
         
 
     }
